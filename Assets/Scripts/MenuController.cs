@@ -21,4 +21,12 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene("SceneMain");
     }
+
+    public void Salir()
+    {
+        Application.Quit();
+    }
+
+
+        
 }
