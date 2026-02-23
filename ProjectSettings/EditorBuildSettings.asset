@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneIntro.unity
     guid: 398ba007efc0cd841b1fb9e6c45f0bb8
+  - enabled: 1
+    path: Assets/Scenes/CargarPartida.unity
+    guid: cd7a619f91df6c844a67ef49d72e8671
+  - enabled: 1
+    path: Assets/Scenes/CrearPersonaje.unity
+    guid: 7c67711185fb44e429992ee672e293e3
   m_configObjects: {}

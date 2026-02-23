@@ -45,6 +45,13 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void CargarPartida()
+    {
+        SceneManager.LoadScene("CargarPartida");
+    }
+
+
+
     public void Salir()
     {
         Application.Quit();

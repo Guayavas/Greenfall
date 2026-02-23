@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using static UnityEngine.Rendering.DebugUI;
 
-public class MenuController : MonoBehaviour
+public class CargarPartida : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,20 +21,10 @@ public class MenuController : MonoBehaviour
         
     }
 
-    public void VolverInicio()
+    public void CargarSlot()
     {
-        SceneManager.LoadScene("SceneMenuInicio");
-    }
-
-    public void CargarPartida()
-    {
-        GameController.Instance.CargarPartida();
-    }
-    public void Salir()
-    {
-        Application.Quit();
+        GameController.Instance.Jugar();
     }
 
 
-        
 }
