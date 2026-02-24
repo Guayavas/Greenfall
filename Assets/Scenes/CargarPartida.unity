@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11782764}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1547576270}
+        m_TargetAssemblyTypeName: CargarPartida, Assembly-CSharp
+        m_MethodName: CargarSlot2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &11782764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,7 +565,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 340923307}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1547576270}
+        m_TargetAssemblyTypeName: CargarPartida, Assembly-CSharp
+        m_MethodName: CargarSlot3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &340923307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1405,7 +1429,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1547576270}
         m_TargetAssemblyTypeName: CargarPartida, Assembly-CSharp
-        m_MethodName: CargarSlot
+        m_MethodName: CargarSlot1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
