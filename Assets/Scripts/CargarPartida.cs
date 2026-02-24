@@ -1,30 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using static UnityEngine.Rendering.DebugUI;
 
 public class CargarPartida : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void CargarSlot(int slotId)
     {
-        
+        if (GameController.Instance == null)
+        {
+            Debug.LogError("No existe GameController en la escena.");
+            return;
+        }
+
+        GameController.Instance.SeleccionarSlotYCargar(slotId);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void CargarSlot()
-    {
-        GameController.Instance.Jugar();
-    }
-
-
+    // Métodos de conveniencia para conectar botones desde el Inspector sin parámetros.
+    public void CargarSlot1() => CargarSlot(1);
+    public void CargarSlot2() => CargarSlot(2);
+    public void CargarSlot3() => CargarSlot(3);
 }
