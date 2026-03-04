@@ -26,6 +26,11 @@ public class Personaje : MonoBehaviour
 ?	Fecha y hora de guardado
 
      */
+
+    private void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
     public void ObtenerInformacion()
     {
 

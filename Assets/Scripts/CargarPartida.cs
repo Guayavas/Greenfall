@@ -37,17 +37,43 @@ public class CargarPartida : MonoBehaviour
                 {
                     Debug.Log("Carga Partida Slot 1");
                     Cargar(1);
+                    Debug.Log("Personaje : " + personaje.fechaGuardado);
+                    SceneManager.LoadScene("SceneMain");
+                    
+                }
+                else
+                {
+                    Debug.Log("Inicia Nueva Partida");
+                    SceneManager.LoadScene("SceneIntro");
+                }
+                    break;
+            case "Partida2":
+                if (ExisteSlot(2))
+                {
+                    Debug.Log("Carga Partida Slot 2");
+                    Cargar(2);
                     //SceneManager.LoadScene("SceneMain");
                     Debug.Log("Personaje : " + personaje.fechaGuardado);
                 }
                 else
                 {
                     Debug.Log("Inicia Nueva Partida");
+                    SceneManager.LoadScene("SceneIntro");
                 }
-                    break;
-            case "Partida2":
                 break;
             case "Partida3":
+                if (ExisteSlot(3))
+                {
+                    Debug.Log("Carga Partida Slot 3");
+                    Cargar(3);
+                    //SceneManager.LoadScene("SceneMain");
+                    Debug.Log("Personaje : " + personaje.fechaGuardado);
+                }
+                else
+                {
+                    Debug.Log("Inicia Nueva Partida");
+                    SceneManager.LoadScene("SceneIntro");
+                }
                 break;
             default:
                 break;
@@ -78,12 +104,6 @@ public class CargarPartida : MonoBehaviour
 
         JsonUtility.FromJsonOverwrite(json, personaje);
     }
-
-    public static void ProbarCarga()
-    {
-        
-    }
-
 
     public static bool ExisteSlot(int slot)
     {
