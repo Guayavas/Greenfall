@@ -17,27 +17,13 @@ public class Personaje : MonoBehaviour
     public float nivelContaminacionGlobal;
 
     public string fechaGuardado;
-    /*
-     * ?	Nombre del jugador
-?	Tiempo de juego
-?	Empresas adquiridas
-?	Capital económico
-?	Nivel de contaminación global
-?	Fecha y hora de guardado
 
-     */
+    public int Karma;
+ 
 
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
     }
-    public void ObtenerInformacion()
-    {
 
-    }
-
-    public void ColocarInformacion()
-    {
-        
-    }
 }

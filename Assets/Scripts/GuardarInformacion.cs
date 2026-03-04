@@ -29,6 +29,23 @@ public class GuardarInformacion : MonoBehaviour
         File.WriteAllText(ruta, json);
     }
 
+    public static void Borrar(int slot)
+    {
+        string ruta =
+            Application.persistentDataPath +
+            "/save_slot_" + slot + ".json";
+
+        if (File.Exists(ruta))
+        {
+            File.Delete(ruta);
+            Debug.Log("Archivo del slot " + slot + " borrado correctamente.");
+        }
+        else
+        {
+            Debug.Log("No existe archivo en el slot " + slot);
+        }
+    }
+
 
     public void ProbadorGuarda()
     {
@@ -36,7 +53,9 @@ public class GuardarInformacion : MonoBehaviour
         personaje.tiempoJuego = 10;
         personaje.capitalEconomico = 500;
         personaje.nivelContaminacionGlobal = 20;
+        personaje.Karma = 2;
         personaje.fechaGuardado = DateTime.Now.ToString("G");
         Guardar(1, personaje);
     }
+
 }

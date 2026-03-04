@@ -14,15 +14,24 @@ public class CinematicController : MonoBehaviour
         videoPlayer.loopPointReached += OnVideoFinished;   
     }
 
+    void Update()
+    {
+        // Si el jugador presiona una tecla para saltar el video
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SaltarVideo();
+        }
+    }
+
     void OnVideoFinished(VideoPlayer vp)
     {
         MarcarIntroComoVista();
         SceneManager.LoadScene("SceneMain");
     }
 
-    public void SaltarVideo()   // Llama esto desde un botón UI o en Update()
+    public void SaltarVideo()   // Llama esto desde un botï¿½n UI o en Update()
     {
-        MarcarIntroComoVista();
+        Debug.Log("Video saltado por el jugador.");
         SceneManager.LoadScene("SceneMain");
     }
 
