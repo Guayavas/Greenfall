@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11782764}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1547576270}
+        m_TargetAssemblyTypeName: CargarPartida, Assembly-CSharp
+        m_MethodName: CargarSlot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11782763}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &11782764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,6 +391,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 83379725}
   m_CullTransparentMesh: 1
+--- !u!1 &250086935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 250086937}
+  - component: {fileID: 250086936}
+  m_Layer: 0
+  m_Name: Personaje
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &250086936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250086935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a762173cdbdab6a4ba2e55b05da19289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nombreJugador: Victor
+  tiempoJuego: 10
+  empresasAdquiridas: 10
+  capitalEconomico: 50
+  nivelContaminacionGlobal: 50
+  fechaGuardado: 
+--- !u!4 &250086937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250086935}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1059.0586, y: 532.93164, z: 3.2886436}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &266567150
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,7 +615,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 340923307}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1547576270}
+        m_TargetAssemblyTypeName: CargarPartida, Assembly-CSharp
+        m_MethodName: CargarSlot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 340923306}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &340923307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -791,7 +865,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 804039906}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1038492379}
+        m_TargetAssemblyTypeName: GuardarInformacion, Assembly-CSharp
+        m_MethodName: ProbadorGuarda
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &804039906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,6 +997,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856555731}
   m_CullTransparentMesh: 1
+--- !u!1 &1038492378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1038492380}
+  - component: {fileID: 1038492379}
+  m_Layer: 0
+  m_Name: Guardar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1038492379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038492378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a912c5133be149840a780ab4de5bb45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personaje: {fileID: 250086936}
+--- !u!4 &1038492380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038492378}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1059.0586, y: 532.93164, z: 3.2886436}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1156783253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,7 +1309,6 @@ GameObject:
   - component: {fileID: 1488191035}
   - component: {fileID: 1488191038}
   - component: {fileID: 1488191037}
-  - component: {fileID: 1488191039}
   - component: {fileID: 1488191036}
   m_Layer: 5
   m_Name: Partida1
@@ -1254,10 +1384,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1547576270}
         m_TargetAssemblyTypeName: CargarPartida, Assembly-CSharp
         m_MethodName: CargarSlot
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1488191036}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1301,18 +1431,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488191034}
   m_CullTransparentMesh: 1
---- !u!114 &1488191039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488191034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b74d29b137e00148b449800f151aeb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1547576269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,3 +1910,5 @@ SceneRoots:
   - {fileID: 1946905257}
   - {fileID: 1835746375}
   - {fileID: 1547576271}
+  - {fileID: 250086937}
+  - {fileID: 1038492380}

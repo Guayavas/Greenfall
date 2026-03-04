@@ -1161,8 +1161,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1143076715}
-        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+      - m_Target: {fileID: 1343750077}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: Salir
         m_Mode: 1
         m_Arguments:
