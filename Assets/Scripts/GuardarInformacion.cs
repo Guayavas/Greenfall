@@ -26,25 +26,12 @@ public class GuardarInformacion : MonoBehaviour
         string ruta =
             Application.persistentDataPath +
             "/save_slot_" + slot + ".json";
-
         File.WriteAllText(ruta, json);
     }
 
+
     public void ProbadorGuarda()
     {
-        /*
-         *    public string nombreJugador;
-
-    public float tiempoJuego; // segundos acumulados
-
-    public int empresasAdquiridas;
-
-    public float capitalEconomico;
-
-    public float nivelContaminacionGlobal;
-
-    public string fechaGuardado;
-         */
         personaje.nombreJugador = "Victor";
         personaje.tiempoJuego = 10;
         personaje.capitalEconomico = 500;

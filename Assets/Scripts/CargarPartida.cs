@@ -9,7 +9,8 @@ using UnityEngine.UIElements;
 using static UnityEngine.Rendering.DebugUI;
 
 public class CargarPartida : MonoBehaviour
-{ 
+{
+    public Personaje personaje;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,9 @@ public class CargarPartida : MonoBehaviour
                 if(ExisteSlot(1))
                 {
                     Debug.Log("Carga Partida Slot 1");
+                    Cargar(1);
+                    //SceneManager.LoadScene("SceneMain");
+                    Debug.Log("Personaje : " + personaje.fechaGuardado);
                 }
                 else
                 {
@@ -49,6 +53,37 @@ public class CargarPartida : MonoBehaviour
                 break;
         }
     }
+
+    public void CargarEnPersonaje(int slot)
+    {
+        string ruta = Application.persistentDataPath +
+                        "/save_slot_" + slot + ".json";
+
+        if (!File.Exists(ruta))
+            return;
+
+        string json = File.ReadAllText(ruta);
+
+        JsonUtility.FromJsonOverwrite(json, personaje);
+    }
+    public void Cargar(int slot)
+    {
+        string ruta = Application.persistentDataPath +
+                        "/save_slot_" + slot + ".json";
+
+        if (!File.Exists(ruta))
+            return;
+
+        string json = File.ReadAllText(ruta);
+
+        JsonUtility.FromJsonOverwrite(json, personaje);
+    }
+
+    public static void ProbarCarga()
+    {
+        
+    }
+
 
     public static bool ExisteSlot(int slot)
     {

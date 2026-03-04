@@ -420,11 +420,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a762173cdbdab6a4ba2e55b05da19289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreJugador: Victor
-  tiempoJuego: 10
-  empresasAdquiridas: 10
-  capitalEconomico: 50
-  nivelContaminacionGlobal: 50
+  nombreJugador: 
+  tiempoJuego: 0
+  empresasAdquiridas: 0
+  capitalEconomico: 0
+  nivelContaminacionGlobal: 0
   fechaGuardado: 
 --- !u!4 &250086937
 Transform:
@@ -819,7 +819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 353, y: -182}
+  m_AnchoredPosition: {x: 353, y: -178}
   m_SizeDelta: {x: 200, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &804039905
@@ -866,9 +866,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1038492379}
-        m_TargetAssemblyTypeName: GuardarInformacion, Assembly-CSharp
-        m_MethodName: ProbadorGuarda
+      - m_Target: {fileID: 1547576270}
+        m_TargetAssemblyTypeName: CargarPartida, Assembly-CSharp
+        m_MethodName: ProbarCarga
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1213,7 +1213,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 353, y: 237}
+  m_AnchoredPosition: {x: 353, y: 229}
   m_SizeDelta: {x: 200, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1394480365
@@ -1460,6 +1460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b74d29b137e00148b449800f151aeb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  personaje: {fileID: 250086936}
 --- !u!4 &1547576271
 Transform:
   m_ObjectHideFlags: 0
@@ -1510,7 +1511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 353, y: 24}
+  m_AnchoredPosition: {x: 353, y: 28}
   m_SizeDelta: {x: 200, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1778863815
