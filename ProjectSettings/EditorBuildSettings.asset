@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CrearPersonaje.unity
     guid: 7c67711185fb44e429992ee672e293e3
+  - enabled: 1
+    path: Assets/Scenes/SceneComputer.unity
+    guid: 432ca8fe9f4c1194fa910c58ae7a119a
   m_configObjects: {}
