@@ -107,7 +107,7 @@ public class CargarPartida : MonoBehaviour
     public void InicializarPersonaje()
     {
         personaje.tiempoJuego = 0;
-        personaje.empresasAdquiridas = 0;
+        personaje.empresasAdquiridas.Clear();
         personaje.capitalEconomico = 1000000;
         personaje.nivelContaminacionGlobal = 0;
         personaje.Karma = 0;

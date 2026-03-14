@@ -11,6 +11,7 @@ public class GuardarInformacion : MonoBehaviour
 {
     public Personaje personaje;
     public ColocarInformacion informacion;
+  
     
     // Start is called before the first frame update
     void Start()
@@ -58,7 +59,7 @@ public class GuardarInformacion : MonoBehaviour
     {
         personaje.nombreJugador = "Jugador";
         personaje.tiempoJuego = 0;
-        personaje.empresasAdquiridas = 0;
+        personaje.empresasAdquiridas.Clear();
         personaje.capitalEconomico = 1000000;
         personaje.nivelContaminacionGlobal = 0;
         personaje.Karma = 0;

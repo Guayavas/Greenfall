@@ -20,12 +20,6 @@ public class ColocarInformacion : MonoBehaviour
         ColocarInformacionSlot(opcion);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ColocarInformacionSlot(int slot)
     {
         Debug.Log("Entra 1");

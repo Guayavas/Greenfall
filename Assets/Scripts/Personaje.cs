@@ -13,7 +13,7 @@ public class Personaje : MonoBehaviour
 
     public float tiempoJuego; // segundos acumulados
 
-    public int empresasAdquiridas;
+    public List<string> empresasAdquiridas = new List<string>();
 
     public float capitalEconomico;
 
@@ -24,6 +24,11 @@ public class Personaje : MonoBehaviour
     public int Karma;
     
     public int slotActual;
+
+    public int dia;
+
+    public int energia;
+
 
     public static Personaje personaje;
 

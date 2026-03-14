@@ -9,7 +9,7 @@ public class DataPersonaje
 
     public float tiempoJuego; // segundos acumulados
 
-    public int empresasAdquiridas;
+    public List<string> empresasAdquiridas = new List<string>();
 
     public float capitalEconomico;
 
@@ -18,4 +18,8 @@ public class DataPersonaje
     public string fechaGuardado;
 
     public int Karma;
+
+    public int dia;
+
+    public int energia;
 }
