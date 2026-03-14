@@ -3,41 +3,44 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class GuardarInformacion : MonoBehaviour
 {
     public Personaje personaje;
-
+    public ColocarInformacion informacion;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        personaje = GameObject.Find("Personaje").GetComponent<Personaje>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public static void Guardar(int slot, Personaje personaje)
+    public void Guardar(int slot)
     {
         string json = JsonUtility.ToJson(personaje);
         string ruta =
             Application.persistentDataPath +
-            "/save_slot_" + slot + ".json";
+            "/save_" + slot + ".json";
         File.WriteAllText(ruta, json);
     }
 
-    public static void Borrar(int slot)
+    public void Borrar(int slot)
     {
         string ruta =
             Application.persistentDataPath +
-            "/save_slot_" + slot + ".json";
+            "/save_" + slot + ".json";
 
         if (File.Exists(ruta))
         {
             File.Delete(ruta);
+            for (int i = 1; i <= 3; i++)
+            {
+                informacion.ColocarInformacionSlot(i);
+            }
+          
             Debug.Log("Archivo del slot " + slot + " borrado correctamente.");
         }
         else
@@ -46,16 +49,22 @@ public class GuardarInformacion : MonoBehaviour
         }
     }
 
-
-    public void ProbadorGuarda()
+    public void setNombre(TMP_Text texto)
     {
-        personaje.nombreJugador = "Victor";
-        personaje.tiempoJuego = 10;
-        personaje.capitalEconomico = 500;
-        personaje.nivelContaminacionGlobal = 20;
-        personaje.Karma = 2;
-        personaje.fechaGuardado = DateTime.Now.ToString("G");
-        Guardar(1, personaje);
+        personaje.nombreJugador = texto.text;
     }
+
+    public void probarGuardado()
+    {
+        personaje.nombreJugador = "Jugador";
+        personaje.tiempoJuego = 0;
+        personaje.empresasAdquiridas = 0;
+        personaje.capitalEconomico = 1000000;
+        personaje.nivelContaminacionGlobal = 0;
+        personaje.Karma = 0;
+        personaje.fechaGuardado = DateTime.Now.ToString("g");
+        Guardar(1);
+    }
+    
 
 }

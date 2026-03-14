@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,25 +22,23 @@ public class Personaje : MonoBehaviour
     public string fechaGuardado;
 
     public int Karma;
- 
+    
+    public int slotActual;
 
-    private void Start()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
-    public void InicializarPersonaje(Personaje personaje)
-    {
-        personaje.tiempoJuego = 0;
-        personaje.empresasAdquiridas = 0;
-        personaje.capitalEconomico = 1000000;
-        personaje.nivelContaminacionGlobal = 0;
-        personaje.Karma = 0;
-        personaje.fechaGuardado = DateTime.Now.ToString("G");
-    }
+    public static Personaje personaje;
 
-    public void GetNombre(TMP_Text texto)
+    private void Awake()
     {
-        GameObject personajeObj = GameObject.Find("Personaje");
-    }    
+        
+        if(personaje == null)
+        {
+            personaje = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
 }

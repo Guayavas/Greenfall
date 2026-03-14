@@ -14,7 +14,7 @@ public class CargarPartida : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       personaje = GameObject.Find("Personaje").GetComponent<Personaje>();
     }
 
     // Update is called once per frame
@@ -37,14 +37,14 @@ public class CargarPartida : MonoBehaviour
                 {
                     Debug.Log("Carga Partida Slot 1");
                     Cargar(1);
-                    Debug.Log("Personaje : " + personaje.fechaGuardado);
                     SceneManager.LoadScene("SceneMain");
                     
                 }
                 else
                 {
                     Debug.Log("Inicia Nueva Partida");
-                    SceneManager.LoadScene("SceneIntro");
+                    InicializarPersonaje();
+                    SceneManager.LoadScene("CrearPersonaje");
                 }
                     break;
             case "Partida2":
@@ -58,7 +58,8 @@ public class CargarPartida : MonoBehaviour
                 else
                 {
                     Debug.Log("Inicia Nueva Partida");
-                    SceneManager.LoadScene("SceneIntro");
+                    InicializarPersonaje();
+                    SceneManager.LoadScene("CrearPersonaje");
                 }
                 break;
             case "Partida3":
@@ -72,7 +73,8 @@ public class CargarPartida : MonoBehaviour
                 else
                 {
                     Debug.Log("Inicia Nueva Partida");
-                    SceneManager.LoadScene("SceneIntro");
+                    InicializarPersonaje();
+                    SceneManager.LoadScene("CrearPersonaje");
                 }
                 break;
             default:
@@ -80,22 +82,10 @@ public class CargarPartida : MonoBehaviour
         }
     }
 
-    public void CargarEnPersonaje(int slot)
-    {
-        string ruta = Application.persistentDataPath +
-                        "/save_slot_" + slot + ".json";
-
-        if (!File.Exists(ruta))
-            return;
-
-        string json = File.ReadAllText(ruta);
-
-        JsonUtility.FromJsonOverwrite(json, personaje);
-    }
     public void Cargar(int slot)
     {
         string ruta = Application.persistentDataPath +
-                        "/save_slot_" + slot + ".json";
+                        "/save_" + slot + ".json";
 
         if (!File.Exists(ruta))
             return;
@@ -109,9 +99,19 @@ public class CargarPartida : MonoBehaviour
     {
         string ruta =
             Application.persistentDataPath +
-            "/save_slot_" + slot + ".json";
-
+            "/save_" + slot + ".json";
+        Debug.Log(File.Exists(ruta) + "Esta seria ");
         return File.Exists(ruta);
+    }
+
+    public void InicializarPersonaje()
+    {
+        personaje.tiempoJuego = 0;
+        personaje.empresasAdquiridas = 0;
+        personaje.capitalEconomico = 1000000;
+        personaje.nivelContaminacionGlobal = 0;
+        personaje.Karma = 0;
+        personaje.fechaGuardado = DateTime.Now.ToString("g");
     }
 
 }

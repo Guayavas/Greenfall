@@ -12,6 +12,7 @@ public class EstadisticasController : MonoBehaviour
     public int numeral;
     private void Update()
     {
+        personaje = GameObject.Find("Personaje").GetComponent<Personaje>();
         Opcion(numeral);
     }
     public  void KarmaScore(TMP_Text karma, Personaje personaje)
@@ -36,9 +37,8 @@ public class EstadisticasController : MonoBehaviour
             case 1:
                 DineroScore(dinero,personaje);
                 break;
-
             default:
                 break;
-                }
+            }
     }
 }
