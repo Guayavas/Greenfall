@@ -21,12 +21,12 @@ public class Computadora : MonoBehaviour
 
     public void LlenarEmpresas()
     {
+        empresasDisponibles.Add("MarAzul Conservación");
+        empresasDisponibles.Add("PetroDominion");
         empresasDisponibles.Add("EcoHidro S.A.");
         empresasDisponibles.Add("SolisTech");
-        empresasDisponibles.Add("ReverdeCoop");
-        empresasDisponibles.Add("MarAzul Conservación");
-        empresasDisponibles.Add("CírculoVerde Reciclaje");
-        empresasDisponibles.Add("PetroDominion");
+        empresasDisponibles.Add("ReverdeCoop");        
+        empresasDisponibles.Add("CírculoVerde Reciclaje");        
         empresasDisponibles.Add("Minasombra S.A.");
         empresasDisponibles.Add("CarbónVast");
         empresasDisponibles.Add("PlastiMax Industries");

@@ -8,14 +8,49 @@ public class MenuController : MonoBehaviour
 {
     public GameObject[] empresasActivas = new GameObject[12];
     public Personaje personaje;
-    public Computadora computadora;
+    public GameObject periodico;
+    public GameObject Noticias;
+    //public Computadora computadora;
 
     
     private void Awake()
     {
         personaje = GameObject.Find("Personaje").GetComponent<Personaje>();
+        //periodico = GameObject.Find("Periodico");
+        activarPeriodico();
         verificarEmpresas();
 
+    }
+
+    public void activarPeriodico()
+    {
+        if (personaje.empresasAdquiridas.Count > 0)
+        {
+            Debug.Log("Entra periodico 1");
+            for (int i = 0; i < personaje.empresasAdquiridas.Count; i++)
+            {
+                string auxEmpresa = personaje.empresasAdquiridas[i];
+                switch (auxEmpresa)
+                {
+                    case "MarAzul Conservación":
+                        periodico.SetActive(true);
+                            break;
+                    default :
+                        //periodico.SetActive (false);
+                        break;
+                }
+            }
+        }
+    }
+
+    public void verNoticia()
+    {
+        Noticias.SetActive(true );
+    }
+
+    public void cerrarPeriodico()
+    {
+        Noticias.SetActive(false);
     }
 
     public void verificarEmpresas()

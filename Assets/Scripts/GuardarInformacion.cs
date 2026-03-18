@@ -14,17 +14,21 @@ public class GuardarInformacion : MonoBehaviour
   
     
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         personaje = GameObject.Find("Personaje").GetComponent<Personaje>();
     }
 
-    public void Guardar(int slot)
+    public void Guardar()
     {
+        int slot = personaje.slotActual;
+        personaje.fechaGuardado = DateTime.Now.ToString("g");
+        Debug.Log("Este es el slot actual " + slot);
         string json = JsonUtility.ToJson(personaje);
         string ruta =
             Application.persistentDataPath +
             "/save_" + slot + ".json";
+        Debug.Log("Si sale " + slot);
         File.WriteAllText(ruta, json);
     }
 
@@ -64,7 +68,7 @@ public class GuardarInformacion : MonoBehaviour
         personaje.nivelContaminacionGlobal = 0;
         personaje.Karma = 0;
         personaje.fechaGuardado = DateTime.Now.ToString("g");
-        Guardar(1);
+        Guardar();
     }
     
 
