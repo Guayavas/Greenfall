@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class Computadora : MonoBehaviour
@@ -9,6 +10,7 @@ public class Computadora : MonoBehaviour
     public GameObject[] dias = new GameObject[4]; 
     public List<string> empresasDisponibles = new List<string>();
     public List<int> empresasValor = new List<int>();
+    public List<int> valorKarma =   new List<int>();
     
     private void Awake()
     {
@@ -44,6 +46,19 @@ public class Computadora : MonoBehaviour
         empresasValor.Add(100);
         empresasValor.Add(100);
         empresasValor.Add(100);
+
+        valorKarma.Add(-1);
+        valorKarma.Add(-10);
+        valorKarma.Add(5);
+        valorKarma.Add(10);
+        valorKarma.Add(-8);
+        valorKarma.Add(8);
+        valorKarma.Add(-7);
+        valorKarma.Add(-1);
+        valorKarma.Add(-1);
+        valorKarma.Add(6);
+        valorKarma.Add(-1);
+
     }
 
     public void ComprarEmpresa(int empresaOpcion)
@@ -59,7 +74,26 @@ public class Computadora : MonoBehaviour
         {
             personaje.capitalEconomico = personaje.capitalEconomico - valorEmpresa;
             personaje.empresasAdquiridas.Add(empresa);
+            personaje.Karma += valorKarma[empresaOpcion];
+            
             Debug.Log("Empresa comprada");
+        }
+    }
+
+    public void venderEmpresa(int empresaOpcion)
+    {
+        int valorEmpresa = empresasValor[empresaOpcion];
+        string empresa = empresasDisponibles[empresaOpcion];
+
+        if (personaje.empresasAdquiridas.Contains(empresa))
+        {
+            personaje.capitalEconomico += valorEmpresa;
+            personaje.empresasAdquiridas.Remove(empresa);
+            Debug.Log("Se vendio la empresa");
+        }
+        else
+        {
+            Debug.Log("No posee la empresa no se puede vender");
         }
     }
 
