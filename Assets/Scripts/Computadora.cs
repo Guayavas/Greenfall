@@ -8,6 +8,7 @@ public class Computadora : MonoBehaviour
     public Personaje personaje;
     public GameObject[] dias = new GameObject[4]; 
     public List<string> empresasDisponibles = new List<string>();
+    public List<int> empresasValor = new List<int>();
     
     private void Awake()
     {
@@ -30,11 +31,36 @@ public class Computadora : MonoBehaviour
         empresasDisponibles.Add("AgroTox Global");
         empresasDisponibles.Add("FastWear Group");
         empresasDisponibles.Add("ArrastreCorp");
+
+        empresasValor.Add(100);
+        empresasValor.Add(50);
+        empresasValor.Add(30);
+        empresasValor.Add(141);
+        empresasValor.Add(100);
+        empresasValor.Add(100);
+        empresasValor.Add(100);
+        empresasValor.Add(100);
+        empresasValor.Add(100);
+        empresasValor.Add(100);
+        empresasValor.Add(100);
+        empresasValor.Add(100);
     }
 
     public void ComprarEmpresa(int empresaOpcion)
     {
-        
+        int valorEmpresa = empresasValor[empresaOpcion];
+        string empresa = empresasDisponibles[empresaOpcion];
+
+        if (personaje.capitalEconomico >= valorEmpresa && personaje.empresasAdquiridas.Contains(empresa))
+        {
+            Debug.Log("No alcanza el capital economico o la empresa ya a sido comprada");
+        }
+        else
+        {
+            personaje.capitalEconomico = personaje.capitalEconomico - valorEmpresa;
+            personaje.empresasAdquiridas.Add(empresa);
+            Debug.Log("Empresa comprada");
+        }
     }
 
 

@@ -112,6 +112,7 @@ public class CargarPartida : MonoBehaviour
         personaje.nivelContaminacionGlobal = 0;
         personaje.Karma = 0;
         personaje.fechaGuardado = DateTime.Now.ToString("g");
+        personaje.dia = 1;
     }
 
 }
