@@ -8,14 +8,13 @@ public class EstadisticasController : MonoBehaviour
 {
     public TMP_Text karma;
     public TMP_Text dinero;
-    public TMP_Text empresasAdquiridas;
     public TMP_Text empresaLista;
     public Personaje personaje;
-    public int numeral;
-    private void Update()
+
+    private void Awake()
     {
         personaje = GameObject.Find("Personaje").GetComponent<Personaje>();
-        Opcion(numeral);
+       Opcion();
     }
     public  void KarmaScore(TMP_Text karma, Personaje personaje)
     {
@@ -37,31 +36,18 @@ public class EstadisticasController : MonoBehaviour
             Debug.Log("Entra 2");
             for (int i = 0; i < personaje.empresasAdquiridas.Count; i++)
             {
-                textoTotal = personaje.empresasAdquiridas[i] + "\n";
-                
+                textoTotal += personaje.empresasAdquiridas[i] + "\n";
+                Debug.Log("Texto Bucle I:"+i + " " + textoTotal);
             }
 
         }        
         lista.text = "Empresas adquiridas:\n" + textoTotal;
     }
-    public void Opcion(int opcion)
+    public void Opcion()
     {
-        switch (opcion) {
-            case 0:
-                KarmaScore(karma, personaje);
-            break;
-            case 1:
-                DineroScore(dinero,personaje);
-                break;
-            case 2:
-                empresasEstadisticas(empresaLista);
-                break;
-            default:
-                break;
-            }
-
-
-
+        KarmaScore(karma, personaje);
+        DineroScore(dinero,personaje);
+        empresasEstadisticas(empresaLista);
     }
 
 

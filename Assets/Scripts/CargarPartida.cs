@@ -37,6 +37,7 @@ public class CargarPartida : MonoBehaviour
                 {
                     Debug.Log("Carga Partida Slot 1");
                     Cargar(1);
+                    personaje.slotActual = 1;
                     SceneManager.LoadScene("SceneMain");
                     
                 }
@@ -44,6 +45,7 @@ public class CargarPartida : MonoBehaviour
                 {
                     Debug.Log("Inicia Nueva Partida");
                     InicializarPersonaje();
+                    personaje.slotActual = 1;
                     SceneManager.LoadScene("CrearPersonaje");
                 }
                     break;
@@ -52,6 +54,7 @@ public class CargarPartida : MonoBehaviour
                 {
                     Debug.Log("Carga Partida Slot 2");
                     Cargar(2);
+                    personaje.slotActual = 2;
                     //SceneManager.LoadScene("SceneMain");
                     Debug.Log("Personaje : " + personaje.fechaGuardado);
                 }
@@ -59,6 +62,7 @@ public class CargarPartida : MonoBehaviour
                 {
                     Debug.Log("Inicia Nueva Partida");
                     InicializarPersonaje();
+                    personaje.slotActual = 2;
                     SceneManager.LoadScene("CrearPersonaje");
                 }
                 break;
@@ -67,6 +71,7 @@ public class CargarPartida : MonoBehaviour
                 {
                     Debug.Log("Carga Partida Slot 3");
                     Cargar(3);
+                    personaje.slotActual = 3;
                     //SceneManager.LoadScene("SceneMain");
                     Debug.Log("Personaje : " + personaje.fechaGuardado);
                 }
@@ -74,6 +79,7 @@ public class CargarPartida : MonoBehaviour
                 {
                     Debug.Log("Inicia Nueva Partida");
                     InicializarPersonaje();
+                    personaje.slotActual = 3;
                     SceneManager.LoadScene("CrearPersonaje");
                 }
                 break;

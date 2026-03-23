@@ -59,17 +59,4 @@ public class GuardarInformacion : MonoBehaviour
         personaje.nombreJugador = texto.text;
     }
 
-    public void probarGuardado()
-    {
-        personaje.nombreJugador = "Jugador";
-        personaje.tiempoJuego = 0;
-        personaje.empresasAdquiridas.Clear();
-        personaje.capitalEconomico = 1000000;
-        personaje.nivelContaminacionGlobal = 0;
-        personaje.Karma = 0;
-        personaje.fechaGuardado = DateTime.Now.ToString("g");
-        Guardar();
-    }
-    
-
 }

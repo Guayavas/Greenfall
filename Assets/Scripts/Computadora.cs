@@ -11,6 +11,7 @@ public class Computadora : MonoBehaviour
     public List<string> empresasDisponibles = new List<string>();
     public List<int> empresasValor = new List<int>();
     public List<int> valorKarma =   new List<int>();
+    public EstadisticasController estadisticasController;
     
     private void Awake()
     {
@@ -23,13 +24,14 @@ public class Computadora : MonoBehaviour
     {
         empresasDisponibles.Add("MarAzul Conservación");
         empresasDisponibles.Add("PetroDominion");
-        empresasDisponibles.Add("EcoHidro S.A.");
-        empresasDisponibles.Add("SolisTech");
-        empresasDisponibles.Add("ReverdeCoop");        
-        empresasDisponibles.Add("CírculoVerde Reciclaje");        
-        empresasDisponibles.Add("Minasombra S.A.");
         empresasDisponibles.Add("CarbónVast");
+        empresasDisponibles.Add("SolisTech");
         empresasDisponibles.Add("PlastiMax Industries");
+        empresasDisponibles.Add("ReverdeCoop");
+        empresasDisponibles.Add("Minasombra S.A.");
+        empresasDisponibles.Add("EcoHidro S.A.");        
+            
+        empresasDisponibles.Add("CírculoVerde Reciclaje");  
         empresasDisponibles.Add("AgroTox Global");
         empresasDisponibles.Add("FastWear Group");
         empresasDisponibles.Add("ArrastreCorp");
@@ -78,6 +80,7 @@ public class Computadora : MonoBehaviour
             
             Debug.Log("Empresa comprada");
         }
+        estadisticasController.Opcion();
     }
 
     public void venderEmpresa(int empresaOpcion)
@@ -95,6 +98,7 @@ public class Computadora : MonoBehaviour
         {
             Debug.Log("No posee la empresa no se puede vender");
         }
+        estadisticasController.Opcion();
     }
 
 
