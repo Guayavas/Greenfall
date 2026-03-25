@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneFinalMalo.unity
     guid: d262ebeff18e3cf45995a44b9c885bed
+  - enabled: 1
+    path: Assets/Scenes/FinalCreditos.unity
+    guid: aa55b5fb51c5dac49bb0137c4ae09ed9
   m_configObjects: {}

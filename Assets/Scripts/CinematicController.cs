@@ -9,13 +9,14 @@ public class CinematicController : MonoBehaviour
 {
     private VideoPlayer videoPlayer;
     public Personaje personaje;
-    public TMP_Text Estadisticas;
-    public GameObject panel;
+    //public TMP_Text Estadisticas;
+    //public GameObject panel;
     void Start()
     {
         videoPlayer = GetComponent<VideoPlayer>();
         videoPlayer.loopPointReached += OnVideoFinished;
-        panel = GameObject.Find("Panel");
+        //panel = GameObject.Find("Panel");
+        personaje = GameObject.Find("Personaje").GetComponent<Personaje>();
     }
 
 
@@ -30,28 +31,30 @@ public class CinematicController : MonoBehaviour
 
     void OnVideoFinished(VideoPlayer vp) // (VideoPlayer vp,int opcion)
     {
-        /* switch(opcion)
-         {
-             case 0:
-
-                 break;
-             default: break;
-         }*/
+        Debug.Log("Video saltado por el jugador.");
         if (personaje.Karma == -35)
         {
             SceneManager.LoadScene("SceneMain");
         }
         else
         {
-            panel.SetActive(true);
+            SceneManager.LoadScene("FinalCreditos");
         }
-         
+
     }
 
     public void SaltarVideo()   
     {
         Debug.Log("Video saltado por el jugador.");
-        SceneManager.LoadScene("SceneMain");
+        if (personaje.Karma == -35)
+        {
+            SceneManager.LoadScene("SceneMain");
+        }
+        else
+        {
+            SceneManager.LoadScene("FinalCreditos");
+        }
+        
     }
 
     void OnDestroy()
