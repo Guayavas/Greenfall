@@ -55,8 +55,8 @@ public class Computadora : MonoBehaviour
         valorKarma.Add(22);
         valorKarma.Add(-20);
         valorKarma.Add(22);
-        valorKarma.Add(18);
         valorKarma.Add(-26);
+        valorKarma.Add(18);
         valorKarma.Add(-1);
         valorKarma.Add(6);
         valorKarma.Add(-1);
@@ -68,7 +68,7 @@ public class Computadora : MonoBehaviour
         int valorEmpresa = empresasValor[empresaOpcion];
         string empresa = empresasDisponibles[empresaOpcion];
 
-        if (personaje.capitalEconomico >= valorEmpresa && personaje.empresasAdquiridas.Contains(empresa))
+        if (personaje.capitalEconomico <= valorEmpresa || personaje.empresasAdquiridas.Contains(empresa))
         {
             Debug.Log("No alcanza el capital economico o la empresa ya a sido comprada");
         }

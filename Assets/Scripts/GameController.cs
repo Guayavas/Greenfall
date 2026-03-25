@@ -24,8 +24,5 @@ public class GameController : MonoBehaviour
 
   
 
-    public void Salir()
-    {
-        Application.Quit();
-    }
+    
 }
