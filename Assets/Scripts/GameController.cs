@@ -22,30 +22,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void DesicionQueFinal()
-    {
-        if (personaje.Karma > 0)
-        {
-            sceneController.CargarScena(8);
-        }
-        else
-        {
-            sceneController.CargarScena(9);
-        }
-            
-    }
-
-    public void CambiarDia()
-    {
-        if(personaje.dia == 4)
-        {
-            DesicionQueFinal();             
-        }
-        else
-        {
-            personaje.dia++;
-        }
-    }
+  
 
     public void Salir()
     {

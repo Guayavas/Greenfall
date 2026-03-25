@@ -23,5 +23,5 @@ public class DataPersonaje
 
     public int dia;
 
-    public int energia;
+    //public int energia;
 }

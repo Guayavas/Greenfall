@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
@@ -7,12 +8,17 @@ using UnityEngine.Video;
 public class CinematicController : MonoBehaviour
 {
     private VideoPlayer videoPlayer;
-
+    public Personaje personaje;
+    public TMP_Text Estadisticas;
+    public GameObject panel;
     void Start()
     {
         videoPlayer = GetComponent<VideoPlayer>();
-        videoPlayer.loopPointReached += OnVideoFinished;   
+        videoPlayer.loopPointReached += OnVideoFinished;
+        panel = GameObject.Find("Panel");
     }
+
+
 
     void Update()
     {
@@ -24,14 +30,22 @@ public class CinematicController : MonoBehaviour
 
     void OnVideoFinished(VideoPlayer vp) // (VideoPlayer vp,int opcion)
     {
-       /* switch(opcion)
+        /* switch(opcion)
+         {
+             case 0:
+
+                 break;
+             default: break;
+         }*/
+        if (personaje.Karma == -35)
         {
-            case 0:
-                
-                break;
-            default: break;
-        }*/
-        SceneManager.LoadScene("SceneMain");
+            SceneManager.LoadScene("SceneMain");
+        }
+        else
+        {
+            panel.SetActive(true);
+        }
+         
     }
 
     public void SaltarVideo()   

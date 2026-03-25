@@ -27,7 +27,7 @@ public class Personaje : MonoBehaviour
 
     public int dia;
 
-    public int energia;
+    //public int energia;
 
     public bool verIntro;
 

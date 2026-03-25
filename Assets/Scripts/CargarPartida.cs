@@ -116,7 +116,7 @@ public class CargarPartida : MonoBehaviour
         personaje.empresasAdquiridas.Clear();
         personaje.capitalEconomico = 1000000;
         personaje.nivelContaminacionGlobal = 0;
-        personaje.Karma = 0;
+        personaje.Karma = -35;
         personaje.fechaGuardado = DateTime.Now.ToString("g");
         personaje.dia = 1;
     }
