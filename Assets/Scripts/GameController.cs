@@ -6,22 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public static GameController Instance;
-    public bool verIntro = true;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    Personaje personaje;
+    SceneController sceneController;
     void Awake()
     {
+        personaje = GameObject.Find("Personaje").GetComponent<Personaje>();
         if (Instance == null)
         {
             Instance = this;
@@ -33,24 +22,30 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void Jugar()
+    public void DesicionQueFinal()
     {
-        if (verIntro)
+        if (personaje.Karma > 0)
         {
-            SceneManager.LoadScene("SceneIntro");
+            sceneController.CargarScena(8);
         }
         else
         {
-            SceneManager.LoadScene("SceneMain");
+            sceneController.CargarScena(9);
+        }
+            
+    }
+
+    public void CambiarDia()
+    {
+        if(personaje.dia == 4)
+        {
+            DesicionQueFinal();             
+        }
+        else
+        {
+            personaje.dia++;
         }
     }
-
-    public void CargarPartida()
-    {
-        SceneManager.LoadScene("CargarPartida");
-    }
-
-
 
     public void Salir()
     {

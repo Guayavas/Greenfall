@@ -19,6 +19,8 @@ public class DataPersonaje
 
     public int Karma;
 
+    public int slotActual;
+
     public int dia;
 
     public int energia;

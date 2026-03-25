@@ -29,6 +29,7 @@ public class Personaje : MonoBehaviour
 
     public int energia;
 
+    public bool verIntro;
 
     public static Personaje personaje;
 

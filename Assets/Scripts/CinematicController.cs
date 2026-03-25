@@ -16,33 +16,28 @@ public class CinematicController : MonoBehaviour
 
     void Update()
     {
-        // Si el jugador presiona una tecla para saltar el video
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SaltarVideo();
         }
     }
 
-    void OnVideoFinished(VideoPlayer vp)
+    void OnVideoFinished(VideoPlayer vp) // (VideoPlayer vp,int opcion)
     {
-        MarcarIntroComoVista();
+       /* switch(opcion)
+        {
+            case 0:
+                
+                break;
+            default: break;
+        }*/
         SceneManager.LoadScene("SceneMain");
     }
 
-    public void SaltarVideo()   // Llama esto desde un bot�n UI o en Update()
+    public void SaltarVideo()   
     {
         Debug.Log("Video saltado por el jugador.");
         SceneManager.LoadScene("SceneMain");
-    }
-
-    //cambia el valor a false
-    private void MarcarIntroComoVista()
-    {
-        if (GameController.Instance != null)
-        {
-            GameController.Instance.verIntro = false;
-            Debug.Log("Intro marcada como vista (verIntro = false)");
-        }
     }
 
     void OnDestroy()

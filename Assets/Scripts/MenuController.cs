@@ -19,7 +19,6 @@ public class MenuController : MonoBehaviour
         //periodico = GameObject.Find("Periodico");
         activarPeriodico();
         verificarEmpresas();
-
     }
 
     public void activarPeriodico()
@@ -78,10 +77,10 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("SceneMenuInicio");
     }
 
-    public void CargarPartida()
+    /*public void CargarPartida()
     {
         GameController.Instance.CargarPartida();
-    }
+    }*/
     public void Salir()
     {
         Application.Quit();
