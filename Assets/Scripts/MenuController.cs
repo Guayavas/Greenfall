@@ -114,14 +114,14 @@ public class MenuController : MonoBehaviour
     {
 
 
-        if(personaje.Karma<-55)
+        if(personaje.Karma< -65)
         {
             imageFondo.sprite = fondoMalo;
             sonidoMalo.Play();
         }
         else
         {
-            if(personaje.Karma <-35)
+            if(personaje.Karma < -35)
             {
                 imageFondo.sprite = fondoMedio;
                 SonidoRegular.Play();
